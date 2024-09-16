@@ -32,7 +32,7 @@ MovieCard.propTypes = {
     backdrop_path: PropTypes.string,
     genre_ids: PropTypes.array,
     highlighted: PropTypes.bool,
-    id: PropTypes.string,
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     original_language: PropTypes.string,
     original_title: PropTypes.string,
     overview: PropTypes.string,

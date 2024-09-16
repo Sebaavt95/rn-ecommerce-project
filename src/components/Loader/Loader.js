@@ -7,7 +7,7 @@ const Loader = ({ size = 'small', color = 'white' }) => (
 );
 
 Loader.propTypes = {
-  size: PropTypes.string,
+  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   color: PropTypes.string,
 };
 
