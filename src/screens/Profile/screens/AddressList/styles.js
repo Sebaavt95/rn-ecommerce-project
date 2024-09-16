@@ -27,7 +27,7 @@ export default StyleSheet.create({
     marginBottom: 10,
   },
   text: {
-    width: '55%',
+    width: '60%',
   },
   buttonsWrapper: {
     flexDirection: 'row',

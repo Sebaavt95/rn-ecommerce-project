@@ -10,6 +10,7 @@ import Loader from '../../../../components/Loader';
 import Button from '../../../../components/Button';
 import colors from '../../../../global/colors';
 import {
+  useGetProfileDataQuery,
   useRemoveUserLocationMutation,
   useSaveFavouriteLocationMutation,
 } from '../../../../services/shop';
@@ -19,11 +20,8 @@ const AddressList = ({ navigation }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isConfirmType, setIsConfirmType] = useState(false);
   const [selectedLocation, setSelectedLocation] = useState({});
-  const {
-    id,
-    selectedLocation: locationFromRedux,
-    locations,
-  } = useSelector(state => state.auth.user);
+  const { id, locations } = useSelector(state => state.auth.user);
+  const { data: profileData } = useGetProfileDataQuery(id);
   const [saveFavouriteLocation] = useSaveFavouriteLocationMutation();
   const [removeLocationTrigger, { isLoading: isRemoveLoading }] =
     useRemoveUserLocationMutation();
@@ -48,8 +46,9 @@ const AddressList = ({ navigation }) => {
     try {
       const { id: locationId } = selectedLocation;
       if (!locationId) return;
-      if (locationFromRedux?.id === locationId)
-        saveFavouriteLocation({ userId: id, location: null });
+      const favouriteLocation = profileData?.favouriteLocation;
+      if (favouriteLocation?.id === locationId)
+        await saveFavouriteLocation({ userId: id, location: {} });
       setIsModalOpen(false);
       await removeLocationTrigger({ userId: id, locationId });
     } catch (error) {

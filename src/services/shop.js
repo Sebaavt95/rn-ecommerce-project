@@ -50,7 +50,7 @@ export const shopApi = createApi({
     saveFavouriteLocation: builder.mutation({
       query: ({ userId, location }) => ({
         url: `users/${userId}/favouriteLocation.json`,
-        method: 'patch',
+        method: 'put',
         body: location,
       }),
       invalidatesTags: ['userLocation'],
