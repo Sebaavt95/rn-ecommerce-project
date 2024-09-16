@@ -48,6 +48,7 @@ const ImageSelector = () => {
         isOpen={isModalOpen}
         onClose={handleCloseModal}
         handleConfirm={confirmImage}
+        confirmBtnDisabled={!image}
         handleCancel={handleCloseModal}
       >
         <Button handlePress={addPhoto} style={styles.modalButton}>

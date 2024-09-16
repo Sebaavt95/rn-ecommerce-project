@@ -9,6 +9,7 @@ const Modal = ({
   onClose,
   handleConfirm,
   confirmText = 'Aceptar',
+  confirmBtnDisabled = false,
   handleCancel,
   cancelText = 'Cancelar',
   animationType = 'slide',
@@ -33,7 +34,10 @@ const Modal = ({
                 </Button>
               )}
               {handleConfirm && (
-                <Button handlePress={handleConfirm}>
+                <Button
+                  handlePress={handleConfirm}
+                  disabled={confirmBtnDisabled}
+                >
                   <Text textAlign="center">{confirmText}</Text>
                 </Button>
               )}
@@ -50,6 +54,7 @@ Modal.propTypes = {
   onClose: PropTypes.func,
   handleConfirm: PropTypes.func,
   confirmText: PropTypes.string,
+  confirmBtnDisabled: PropTypes.bool,
   handleCancel: PropTypes.func,
   cancelText: PropTypes.string,
   animationType: PropTypes.string,

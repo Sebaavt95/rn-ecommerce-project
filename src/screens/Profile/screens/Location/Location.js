@@ -85,6 +85,7 @@ const LocationSelector = ({ navigation }) => {
 LocationSelector.propTypes = {
   navigation: PropTypes.shape({
     navigate: PropTypes.func,
+    goBack: PropTypes.func,
   }),
 };
 

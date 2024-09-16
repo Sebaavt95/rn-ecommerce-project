@@ -24,6 +24,7 @@ export default StyleSheet.create({
   content: {
     justifyContent: 'center',
     alignItems: 'center',
+    paddingHorizontal: 10,
     paddingVertical: 20,
   },
   buttonsContainer: {

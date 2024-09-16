@@ -7,6 +7,8 @@ export default StyleSheet.create({
     borderRadius: 8,
     borderWidth: 1,
     borderColor: 'transparent',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   primary: {
     backgroundColor: colors.tertiary,
