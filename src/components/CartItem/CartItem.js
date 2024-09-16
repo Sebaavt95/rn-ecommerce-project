@@ -1,7 +1,8 @@
-import { Image, Pressable, StyleSheet, View } from 'react-native';
+import { Image, StyleSheet, View } from 'react-native';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import Ionicons from '@expo/vector-icons/Ionicons';
+import Button from '../Button';
 import Text from '../Text';
 import { getImageUrl } from '../../utils';
 import { removeFromCart } from '../../features/cartSlice';
@@ -34,14 +35,14 @@ const CartItem = ({ item }) => {
           {genre}
         </Text>
         <Text>{name}</Text>
-        <Text fontSize={15}>
-          Cantidad: {quantity} • ${price}
+        <Text fontSize={22}>
+          {quantity} un. x ${price}
         </Text>
-      </View>
-      <View style={styles.icon}>
-        <Pressable onPress={handleRemove}>
-          <Ionicons name="trash-sharp" size={28} color={colors.white} />
-        </Pressable>
+        <View style={styles.removeBtn}>
+          <Button variant="error" handlePress={handleRemove}>
+            <Ionicons name="trash-sharp" size={22} color={colors.white} />
+          </Button>
+        </View>
       </View>
     </View>
   );
@@ -62,7 +63,6 @@ export default CartItem;
 const styles = StyleSheet.create({
   card: {
     flex: 1,
-    height: 150,
     padding: 10,
     flexDirection: 'row',
     margin: 10,
@@ -73,8 +73,8 @@ const styles = StyleSheet.create({
     width: '70%',
     marginLeft: 10,
   },
-  icon: {
-    alignSelf: 'center',
-    marginLeft: 'auto',
+  removeBtn: {
+    marginTop: 15,
+    alignSelf: 'flex-end',
   },
 });
