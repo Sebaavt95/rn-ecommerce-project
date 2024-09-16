@@ -11,8 +11,6 @@ export default StyleSheet.create({
     width: '100%',
   },
   summary: {
-    position: 'absolute',
-    bottom: 0,
     width: '100%',
     flexDirection: 'row',
     justifyContent: 'space-between',
