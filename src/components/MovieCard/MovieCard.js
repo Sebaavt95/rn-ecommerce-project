@@ -1,11 +1,16 @@
-import { Image, Pressable, StyleSheet, View } from 'react-native';
+import { Image, Pressable, useWindowDimensions, View } from 'react-native';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { selectMovie } from '../../features/shopSlice';
 import { getImageUrl } from '../../utils';
 
+const PADDING = 8;
+
 const MovieCard = ({ movie, handleSelectMovie }) => {
   const dispatch = useDispatch();
+  const { width } = useWindowDimensions();
+
+  const imageWidth = ((100 / 3) * width) / 100 - PADDING * 2;
 
   const handleOnPress = () => {
     dispatch(selectMovie(movie));
@@ -13,10 +18,10 @@ const MovieCard = ({ movie, handleSelectMovie }) => {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={{ padding: PADDING }}>
       <Pressable onPress={handleOnPress}>
         <Image
-          style={styles.image}
+          style={{ width: imageWidth, height: 200 }}
           source={{
             uri: getImageUrl(movie.poster_path, '342'),
           }}
@@ -49,13 +54,3 @@ MovieCard.propTypes = {
 };
 
 export default MovieCard;
-
-const styles = StyleSheet.create({
-  container: {
-    padding: 8,
-  },
-  image: {
-    width: 120,
-    height: 200,
-  },
-});
