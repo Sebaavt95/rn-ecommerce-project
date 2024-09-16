@@ -30,10 +30,12 @@ export const cartSlice = createSlice({
       );
     },
     removeFromCart: (state, action) => {
-      const movieId = action.payload?.id;
-      if (!movieId) return;
-      state.order.items = state.order.items.filter(item => item.id !== movieId);
-      state.order.total = state.order.total - action.payload?.price;
+      const movie = action.payload;
+      if (!movie?.id) return;
+      state.order.items = state.order.items.filter(
+        item => item.id !== movie?.id
+      );
+      state.order.total = state.order.total - movie?.price * movie?.quantity;
     },
     clearCart: state => {
       state.order.items = [];
