@@ -4,9 +4,12 @@ import colors from '../../global/colors';
 export default StyleSheet.create({
   container: {
     flex: 1,
-    // justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: colors.primary,
+  },
+  loaderWrapper: {
+    flex: 1,
+    justifyContent: 'center',
   },
   addressTopWrapper: {
     width: '100%',

@@ -54,7 +54,9 @@ const Home = ({ navigation }) => {
   return (
     <View style={styles.container}>
       {isLoading ? (
-        <Loader size={80} color="tertiary" />
+        <View style={styles.loaderWrapper}>
+          <Loader size={80} color="tertiary" />
+        </View>
       ) : (
         <>
           {favouriteLocation?.address && (
