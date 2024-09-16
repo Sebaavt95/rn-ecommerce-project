@@ -15,12 +15,11 @@ import fonts from './src/global/fonts';
 import { init } from './src/db';
 
 const App = () => {
-  // TODO: Agregar prop-types
   const [loadedFonts] = useFonts(fonts);
 
   (async () => {
     try {
-      init();
+      await init();
       console.log('Base de datos cargada');
     } catch (error) {
       console.log('Error de base de datos', { error });

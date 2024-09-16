@@ -69,7 +69,7 @@ const Home = ({ navigation }) => {
               </Text>
               <Button
                 style={styles.changeAddressBtn}
-                handlePress={() => navigation.navigate('profile')}
+                handlePress={() => navigation.navigate('profileTab')}
               >
                 <AntDesign name="edit" size={24} color={colors.white} />
               </Button>

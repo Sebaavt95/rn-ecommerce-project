@@ -36,7 +36,7 @@ const AddressList = ({ navigation }) => {
     try {
       await saveFavouriteLocation({ userId: id, location: selectedLocation });
       setIsModalOpen(false);
-      navigation.navigate('home');
+      navigation.navigate('shopTab', { screen: 'home' });
     } catch (error) {
       console.log({ error });
     }
