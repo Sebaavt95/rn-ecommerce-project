@@ -7,7 +7,6 @@ import {
   ToastAndroid,
 } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
-// import StarRating from 'react-native-star-rating-widget';
 import { Rating } from '@kolking/react-native-rating';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import Text from '../../components/Text';
@@ -60,13 +59,6 @@ const MovieDetails = () => {
           <AntDesign name="like1" size={20} color={colors.white} />{' '}
           {currentMovie.vote_count}
         </Text>
-        {/* <StarRating
-          rating={currentMovie.vote_average}
-          maxStars={10}
-          starSize={24}
-          color={colors.white}
-          onChange={() => {}}
-        /> */}
         <Rating
           variant="stars-outline"
           baseColor={colors.white}
