@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { FlatList, StyleSheet, View } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
-import { loadMoviesByGenre } from '../../features/shopSlice';
+import { loadMoviesByGenre, selectMovie } from '../../features/shopSlice';
 import MovieCard from '../../components/MovieCard/MovieCard';
 import NotFound from '../../components/NotFound';
 import colors from '../../global/colors';
@@ -22,7 +22,8 @@ const MoviesList = ({ navigation }) => {
     dispatch(loadMoviesByGenre(moviesByGenre));
   }, [selectedGenre]);
 
-  const handleSelectMovie = () => {
+  const handleSelectMovie = movie => {
+    dispatch(selectMovie(movie));
     navigation.navigate('movieDetails');
   };
 
@@ -32,7 +33,10 @@ const MoviesList = ({ navigation }) => {
         <FlatList
           data={moviesByGenre}
           renderItem={({ item }) => (
-            <MovieCard movie={item} handleSelectMovie={handleSelectMovie} />
+            <MovieCard
+              movie={item}
+              handleSelectMovie={() => handleSelectMovie(item)}
+            />
           )}
           keyExtractor={item => item.id}
           numColumns={3}
