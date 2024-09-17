@@ -55,8 +55,6 @@ const Signup = ({ navigation }) => {
     }
   };
 
-  // TODO: crear componente form con state, formErrorFields y submit handler
-
   return (
     <View style={styles.main}>
       {isError && (
