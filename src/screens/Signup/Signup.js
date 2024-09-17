@@ -63,33 +63,33 @@ const Signup = ({ navigation }) => {
         </View>
       )}
       <View style={styles.container}>
-        <Text fontSize={22}>Sign up</Text>
+        <Text fontSize={22}>Registro</Text>
         <Input
           label="Email"
           onChange={value => handleChange('email', value)}
           error={formError?.email}
         />
         <Input
-          label="Password"
+          label="Contraseña"
           onChange={value => handleChange('password', value)}
           isSecure
           error={formError?.password}
         />
         <Input
-          label="Confirm password"
+          label="Confirmar contraseña"
           onChange={value => handleChange('confirmPassword', value)}
           isSecure
           error={formError?.confirmPassword}
         />
-        <Button width={100} handlePress={handleSubmit}>
+        <Button width={130} handlePress={handleSubmit}>
           {!isLoading ? (
-            <Text textAlign="center">Sign up</Text>
+            <Text textAlign="center">Registrarse</Text>
           ) : (
             <Loader size={28} color="white" />
           )}
         </Button>
         <Text fontSize={14} color={colors.info}>
-          Already have an account?
+          ¿Ya tenés una cuenta?
         </Text>
         <Pressable onPress={() => navigation.navigate('login')}>
           <Text
@@ -97,7 +97,7 @@ const Signup = ({ navigation }) => {
             color={colors.tertiary}
             customStyles={styles.link}
           >
-            Login
+            Acceder
           </Text>
         </Pressable>
       </View>

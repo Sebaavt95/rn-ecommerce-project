@@ -69,7 +69,7 @@ const Login = ({ navigation, route }) => {
         </View>
       )}
       <View style={styles.container}>
-        <Text fontSize={22}>Login to start</Text>
+        <Text fontSize={22}>Acceso</Text>
         <Input
           label="Email"
           inputValue={unregisteredEmail || ''}
@@ -77,20 +77,20 @@ const Login = ({ navigation, route }) => {
           error={formError?.email}
         />
         <Input
-          label="Password"
+          label="Contraseña"
           isSecure
           onChange={value => handleChange('password', value)}
           error={formError?.password}
         />
         <Button width={100} handlePress={handleSubmit}>
           {!isLoading ? (
-            <Text textAlign="center">Login</Text>
+            <Text textAlign="center">Acceder</Text>
           ) : (
             <Loader size={28} color="white" />
           )}
         </Button>
         <Text fontSize={14} color={colors.info}>
-          Not have an account?
+          ¿Sin cuenta?
         </Text>
         <Pressable onPress={() => navigation.navigate('signup')}>
           <Text
@@ -98,7 +98,7 @@ const Login = ({ navigation, route }) => {
             color={colors.tertiary}
             customStyles={styles.link}
           >
-            Sign up
+            Registrarse
           </Text>
         </Pressable>
       </View>
