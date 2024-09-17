@@ -4,7 +4,6 @@ import colors from '../../global/colors';
 export default StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
     backgroundColor: colors.primary,
   },
   loaderWrapper: {
@@ -12,7 +11,6 @@ export default StyleSheet.create({
     justifyContent: 'center',
   },
   addressTopWrapper: {
-    width: '100%',
     padding: 5,
     flexDirection: 'row',
     alignItems: 'center',
@@ -29,7 +27,6 @@ export default StyleSheet.create({
     marginLeft: 'auto',
   },
   homeTitle: {
-    width: '100%',
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
@@ -37,11 +34,7 @@ export default StyleSheet.create({
     paddingVertical: 50,
   },
   searchbarWrapper: {
-    width: '100%',
     padding: 20,
-  },
-  movies: {
-    width: '100%',
   },
   highlightedTitle: {
     marginBottom: 20,

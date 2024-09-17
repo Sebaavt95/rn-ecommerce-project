@@ -7,7 +7,8 @@ import {
   ToastAndroid,
 } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
-import StarRating from 'react-native-star-rating-widget';
+// import StarRating from 'react-native-star-rating-widget';
+import { Rating } from '@kolking/react-native-rating';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import Text from '../../components/Text';
 import Button from '../../components/Button';
@@ -59,11 +60,20 @@ const MovieDetails = () => {
           <AntDesign name="like1" size={20} color={colors.white} />{' '}
           {currentMovie.vote_count}
         </Text>
-        <StarRating
+        {/* <StarRating
           rating={currentMovie.vote_average}
           maxStars={10}
           starSize={24}
           color={colors.white}
+          onChange={() => {}}
+        /> */}
+        <Rating
+          variant="stars-outline"
+          baseColor={colors.white}
+          fillColor={colors.warning}
+          rating={currentMovie.vote_average}
+          maxRating={10}
+          disabled
           onChange={() => {}}
         />
       </View>
@@ -89,7 +99,9 @@ const MovieDetails = () => {
             >
               -
             </Button>
-            <Text customStyles={styles.quantity}>{quantity}</Text>
+            <Text textAlign="center" customStyles={styles.quantity}>
+              {quantity}
+            </Text>
             <Button width={50} handlePress={() => handleChangeQty('plus')}>
               +
             </Button>

@@ -36,16 +36,17 @@ export default StyleSheet.create({
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
-    borderWidth: 2,
-    borderColor: colors.tertiary,
     gap: 10,
-    borderRadius: 8,
   },
   qtySelector: {
     flexDirection: 'row',
     alignItems: 'center',
+    borderRadius: 10,
+    borderWidth: 2,
+    borderColor: colors.tertiary,
   },
   quantity: {
+    width: 20,
     marginHorizontal: 20,
   },
 });

@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { FlatList, View } from 'react-native';
+import { FlatList, ScrollView, View } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
@@ -52,7 +52,7 @@ const Home = ({ navigation }) => {
   const handleSelectGenre = () => navigation.navigate('moviesList');
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       {isLoading ? (
         <View style={styles.loaderWrapper}>
           <Loader size={80} color="tertiary" />
@@ -90,7 +90,7 @@ const Home = ({ navigation }) => {
             <Searchbar handleSelect={handleSelectGenre} />
           </View>
           {movies && movies.length && (
-            <View style={styles.movies}>
+            <View>
               <Text
                 textAlign="center"
                 fontSize={25}
@@ -113,7 +113,7 @@ const Home = ({ navigation }) => {
           )}
         </>
       )}
-    </View>
+    </ScrollView>
   );
 };
 
