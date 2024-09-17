@@ -1,12 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Provider } from 'react-redux';
-import {
-  View,
-  StyleSheet,
-  useWindowDimensions,
-  StatusBar,
-  // Platform,
-} from 'react-native';
+import { View, StyleSheet, useWindowDimensions } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 import { useFonts } from 'expo-font';
 import MainNavigator from './src/navigation';
 import store from './src/store';
@@ -38,7 +33,7 @@ const App = () => {
 
   return (
     <Provider store={store}>
-      <StatusBar style="auto" />
+      <StatusBar style="inverted" />
       <View style={styles.container}>
         <MainNavigator />
       </View>
