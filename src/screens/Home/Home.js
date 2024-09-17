@@ -52,7 +52,7 @@ const Home = ({ navigation }) => {
   const handleSelectGenre = () => navigation.navigate('moviesList');
 
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView contentContainerStyle={styles.container}>
       {isLoading ? (
         <View style={styles.loaderWrapper}>
           <Loader size={80} color="tertiary" />

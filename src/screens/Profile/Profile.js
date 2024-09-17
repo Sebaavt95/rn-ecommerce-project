@@ -41,6 +41,7 @@ const Profile = ({ navigation }) => {
 
   const logout = async () => {
     try {
+      navigation.navigate('shopTab');
       dispatch(clearUserData());
       deleteSession();
     } catch (error) {
