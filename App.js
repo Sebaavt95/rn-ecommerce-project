@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react';
 import { Provider } from 'react-redux';
-import { View, StyleSheet, useWindowDimensions } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { useFonts } from 'expo-font';
 import MainNavigator from './src/navigation';
@@ -21,13 +20,13 @@ const App = () => {
     }
   })();
 
-  const { width, height } = useWindowDimensions();
+  // const { width, height } = useWindowDimensions();
 
-  const [isPortrait, setIsPortrait] = useState(false);
+  // const [isPortrait, setIsPortrait] = useState(false);
 
-  useEffect(() => {
-    setIsPortrait(width < height);
-  }, [width, height]);
+  // useEffect(() => {
+  //   setIsPortrait(width < height);
+  // }, [width, height]);
 
   if (!loadedFonts) return null;
 
@@ -47,6 +46,5 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.primary,
-    // marginTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
   },
 });
